@@ -1,0 +1,46 @@
+:root {
+  --color-text: #1a1a1a;
+  --color-muted: #666;
+  --color-border: #e5e5e5;
+  --color-bg: #fff;
+  --font-sans: system-ui, sans-serif;
+  --space-section: 1rem 2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+header {
+  padding: var(--space-section);
+  border-bottom: 1px solid var(--color-border);
+}
+
+header a {
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+
+main {
+  padding: 2rem;
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+footer {
+  padding: var(--space-section);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
