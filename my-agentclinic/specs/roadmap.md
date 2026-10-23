@@ -4,6 +4,10 @@ Phases are intentionally small — each one is a shippable slice, independently 
 
 Strategy: **Hello world first** (working server + layout), then Susan's domain (agents → ailments → therapies → booking), then Mary's dashboard and Steve's polish.
 
+Each phase is validated with `npm test` (Vitest).
+
+The web UI is mobile-first, as in `specs/tech-stack.md`. Base styles fit a narrow screen. `min-width` media queries add room on wider screens. Every page includes a viewport meta tag.
+
 ---
 
 ## Phase 1 — Hello Hono ✅
@@ -45,7 +49,7 @@ Strategy: **Hello world first** (working server + layout), then Susan's domain (
 - Simple tables for staff — Mary's dashboard becomes real
 
 ## Phase 9 — Polish
-- Responsive layout for modern browsers (Steve)
+- Audit every page against the mobile-first rule above
 - Semantic HTML / basic accessibility
 
 ## Phase 10 — Hardening

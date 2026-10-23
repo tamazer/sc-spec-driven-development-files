@@ -34,19 +34,30 @@
 ## Group 6 — Verify
 
 17. Run `npm run typecheck` and confirm exit 0.
-18. Run `npm test` and confirm exit 0 with no test files present.
+18. Run `npm test` and confirm exit 0. Group 9 is the suite that validates the page. `--passWithNoTests` stays on the script.
 19. Run `npm run dev` and confirm `GET /` returns 200 HTML containing the heading and the tagline from `Home`, not the plain string alone.
 
 ## Group 7 — Layout
 
 20. Create `src/components/Layout.tsx`. It owns the document shell: `<html>`, `<head>`, and `<body>`. The head has a charset, a viewport meta, `<title>AgentClinic</title>`, and a stylesheet link.
 21. Create `Header`, `Main`, and `Footer` as three subcomponents, one component per file: `src/components/Header.tsx`, `src/components/Main.tsx`, and `src/components/Footer.tsx`. Do not declare them inside `Layout.tsx`. `Layout` imports all three. `Main` wraps the page content.
-22. Create `static/style.css` with minimal base styles: custom properties, typography, and rules for `header`, `main`, and `footer`.
+22. Create `static/style.css` with base styles: custom properties, typography, and rules for `header`, `main`, and `footer`. Group 10 makes those styles mobile-first.
 23. Link that file from the layout head as `/static/style.css`. In `src/index.tsx`, import `serveStatic` from `@hono/node-server/serve-static` and serve the `static/` directory at `/static/*`.
 24. Change `Home` so it renders inside `<Layout>` and no longer owns the document shell. The heading and the tagline stay the same, and they render inside `<Main>`.
 
 ## Group 8 — Verify the layout
 
 25. Run `npm run typecheck` and confirm exit 0.
-26. Confirm `GET /` returns 200 HTML that contains `<header>`, `<main>`, `<footer>`, the heading, the tagline, and a link to `/static/style.css`.
-27. Confirm `GET /static/style.css` returns 200 and the stylesheet body.
+26. Confirm `GET /` returns 200 HTML that contains `<header>`, `<main>`, `<footer>`, the heading, the tagline, and a link to `/static/style.css`. Group 9 asserts this in Vitest.
+27. Confirm `GET /static/style.css` returns 200 and the stylesheet body. Group 9 asserts this in Vitest.
+
+## Group 9 — Vitest validation
+
+28. Move the Hono app into `src/app.tsx` as `createApp()`. `src/index.tsx` imports it and calls `serve()`. `createApp()` does not listen.
+29. Validate the home page and the stylesheet with `npm test`, as in `specs/tech-stack.md` and `validation.md`. The suite uses `app.request` from the project root.
+
+## Group 10 — Responsive layout
+
+30. Keep `<meta name="viewport" content="width=device-width, initial-scale=1.0">` on `Layout`.
+31. Rewrite `static/style.css` mobile-first: custom properties for color and spacing, compact padding as the base, and a `min-width` media query that adds padding on wider screens.
+32. Extend the Vitest suite so `GET /` includes the viewport meta, and the stylesheet includes a custom property and a `min-width` query.
