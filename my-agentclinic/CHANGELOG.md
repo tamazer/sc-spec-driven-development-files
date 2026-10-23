@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-10-23
+
+- Validate the home page with Vitest and make the layout mobile-first.
+
 ## 2026-10-22
 
 - Ship the Hello Hono phase so clone-and-run serves the home page.
