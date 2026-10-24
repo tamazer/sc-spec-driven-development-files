@@ -10,7 +10,7 @@ AgentClinic is a server-side TypeScript application. All rendering happens on th
 | Runtime | Node.js | Stable, well-supported, vast ecosystem |
 | Server framework | **Hono** | Lightweight, TypeScript-first, fast, excellent DX; routes and middleware feel natural |
 | Templating | Hono JSX (server-side) | JSX without React overhead; components are just functions |
-| CSS | Plain CSS + CSS custom properties | No build step required; mobile-first layout so Steve's page works on a phone and a desktop |
+| CSS | Plain CSS + CSS custom properties | No build step required; mobile-first layout in orange and black so Steve's page works on a phone and a desktop |
 
 ## Recommended: Hono
 
@@ -29,6 +29,8 @@ AgentClinic is a server-side TypeScript application. All rendering happens on th
 ## CSS
 
 The UI is mobile-first. Base styles target a narrow screen. `min-width` media queries add space on wider screens. Custom properties hold color, type, and spacing so those values stay shared across breakpoints. One stylesheet, no CSS framework, no build step. Every document includes `<meta name="viewport" content="width=device-width, initial-scale=1.0">`.
+
+Brand colors are orange and black. The stylesheet defines `--color-brand-orange` (`#e85d04`) and `--color-brand-black` (`#111111`). The header is black, with an orange wordmark and accent. Body text uses the black. The page background stays white so the copy stays readable.
 
 ## Testing
 

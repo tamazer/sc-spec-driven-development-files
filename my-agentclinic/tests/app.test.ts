@@ -43,6 +43,8 @@ describe("GET /static/style.css", () => {
     expect(response.headers.get("content-type")).toContain("text/css");
     expect(css).toBe(file);
     expect(css).toContain("--color-text");
+    expect(css).toContain("--color-brand-orange: #e85d04");
+    expect(css).toContain("--color-brand-black: #111111");
     expect(css).toMatch(/@media\s*\(\s*min-width:/);
   });
 });

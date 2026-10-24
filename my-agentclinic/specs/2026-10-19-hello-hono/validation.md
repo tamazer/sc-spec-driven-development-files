@@ -56,7 +56,7 @@ These files exist, and each exports only its own component:
 
 ### 6. Responsive layout
 
-`GET /` includes the viewport meta from section 2. `static/style.css` follows the mobile-first rule in `specs/tech-stack.md`: custom properties, base styles for a narrow screen, and a `min-width` media query.
+`GET /` includes the viewport meta from section 2. `static/style.css` follows the mobile-first rule in `specs/tech-stack.md`: custom properties, base styles for a narrow screen, and a `min-width` media query. It also defines the brand colors: `--color-brand-orange: #e85d04` and `--color-brand-black: #111111`.
 
 ### 7. Tone
 

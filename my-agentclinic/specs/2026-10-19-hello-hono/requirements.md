@@ -25,7 +25,7 @@ Phase 1 from `specs/roadmap.md`. Prove that Node runs TypeScript, Hono serves a 
 | Heading | `AgentClinic` | Exactly this text inside `<h1>` |
 | Tagline | `AgentClinic is open for business` | The roadmap sentence, in a `<p>` |
 | Shell | `<html>`, `<head>`, `<body>` owned by `Layout` | Imports `Header`, `Main`, and `Footer` from their own files |
-| Stylesheet | `/static/style.css` | Mobile-first: custom properties, narrow-screen base, a `min-width` query |
+| Stylesheet | `/static/style.css` | Mobile-first: custom properties, narrow-screen base, a `min-width` query. Brand colors are orange and black |
 | Viewport | `width=device-width, initial-scale=1.0` | On the layout `<head>` |
 
 A `<title>` of `AgentClinic` is part of that shell, along with a charset and the viewport meta. The body copy stays the heading and the tagline. The header text is `AgentClinic`. The footer text is a copyright line with the year and `AgentClinic`.
@@ -48,6 +48,7 @@ A `<title>` of `AgentClinic` is part of that shell, along with a charset and the
 - **The layout owns the document shell.** `Home` renders the heading and tagline. `Layout` owns `<html>`, `<head>`, and `<body>`. `Main` wraps the page content.
 - **Header, main, and footer are one component per file.** `src/components/Header.tsx`, `src/components/Main.tsx`, and `src/components/Footer.tsx` each export that one component. `src/components/Layout.tsx` imports them and does not define them.
 - **The stylesheet is a static file.** `static/style.css` is linked from the head and served at `/static/style.css`. It follows `specs/tech-stack.md`: custom properties, compact base styles, and at least one `min-width` media query. No framework CSS.
+- **Brand colors are orange and black.** `static/style.css` defines `--color-brand-orange` (`#e85d04`) and `--color-brand-black` (`#111111`). The header is black, with an orange wordmark and accent. Body text uses the black.
 - **The viewport meta is required.** `Layout` includes `<meta name="viewport" content="width=device-width, initial-scale=1.0">`. Responsive layout is part of this phase.
 - **The home page replaces the plain string.** Group 3 may return `AgentClinic is open for business` as text. Group 4 switches `GET /` to `<Home />`. Definition of done is the HTML page inside the layout.
 - **Tagline is the roadmap sentence.** The heading satisfies the HTML choice; the paragraph is exactly `AgentClinic is open for business`. Layout chrome may repeat the site name. No extra clinic copy.
@@ -58,6 +59,6 @@ A `<title>` of `AgentClinic` is part of that shell, along with a charset and the
 - `specs/tech-stack.md`: TypeScript, Node, Hono, Hono JSX, `tsx`, `tsc`, plain CSS, and Vitest for validation. SQLite is chosen for the product, and it is not used in this phase.
 - **Mary** — strict TypeScript and a clean `tsc --noEmit`.
 - **Susan** — agents, ailments, therapies, and booking wait for later phases.
-- **Steve** — the page is readable on a narrow screen and a wide one. Mobile-first CSS starts in this phase. Phase 9 audits later pages.
+- **Steve** — the page is readable on a narrow screen and a wide one, in orange and black. Mobile-first CSS starts in this phase. Phase 9 audits later pages.
 - **Tone** — dry. Page copy is `AgentClinic` and `AgentClinic is open for business`. The header repeats the name. The footer is a copyright line.
 - **Existing code** — `src/index.tsx` serves `Home` as a document shell with no stylesheet. Replace that shell with the layout; do not add a second app.

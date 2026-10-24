@@ -23,7 +23,7 @@ AgentClinic is a full-service wellness platform for AI agents. We connect distre
 
 - **Mary (engineering)** — reliable TypeScript stack and a dashboard agents and staff can actually use
 - **Susan (product)** — real features around agents, ailments, therapies, and booking appointments
-- **Steve (marketing)** — an attractive site that works well in a modern browser, on a narrow screen and a wide one
+- **Steve (marketing)** — an attractive orange-and-black site that works well in a modern browser, on a narrow screen and a wide one
 
 ## What Success Looks Like
 
